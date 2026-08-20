@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import { type ReactNode } from "react";
 
 interface TerminalContainerProps {
-  children: ReactNode;
-  staggerDelay?: number; // Tiempo de espera entre líneas en segundos
-  className?: string;
+  readonly children: ReactNode;
+  readonly staggerDelay?: number; // Tiempo de espera entre líneas en segundos
+  readonly className?: string;
 }
 
 const containerVariants = (delay: number) => ({
@@ -17,10 +17,10 @@ const containerVariants = (delay: number) => ({
   },
 });
 
-export function TerminalContainer({ 
-  children, 
-  staggerDelay = 0.3, 
-  className = "" 
+export function TerminalContainer({
+  children,
+  staggerDelay = 0.3,
+  className = "",
 }: TerminalContainerProps) {
   return (
     <motion.div

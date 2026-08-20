@@ -2,8 +2,8 @@ import { motion, type Variants } from "framer-motion";
 import { type ReactNode } from "react";
 
 interface TerminalLineProps {
-  children: ReactNode;
-  className?: string;
+  readonly children: ReactNode;
+  readonly className?: string;
 }
 
 const lineVariants: Variants = {

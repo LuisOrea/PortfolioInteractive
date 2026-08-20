@@ -1,8 +1,8 @@
 import "../assets/terminal.css";
 
 interface props {
-  text: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  readonly text: string;
+  readonly onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export default function TerminalScene({ text, onChange }: props) {

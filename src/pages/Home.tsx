@@ -24,6 +24,10 @@ export default function Home() {
       <Spinning />
 
       <Html fullscreen>
+        <p className="text-emerald-400">
+          Advertencia, la pagina sigue en mantenimiento por lo que que se pueden
+          visualizar errores o falta de contenido.
+        </p>
         {/* <UseAiVoice texto="Bienvenido de vuelta Jefe" delay={1000} />;
         <UseAiVoice
           texto="De tu lado izquierdo puedes ver los comandos disponibles o si lo prefieres puedes clickear cada uno y automaticamente se te abrira una nueva ventana con la informacion extraida"
