@@ -10,35 +10,23 @@ export default function Abilities() {
         <TypewriterLine text="Lenguajes" />
         <div className="flex justify-around mt-3.5">
           <span className="text-center">
-            <img
-              src="/public/languajes/js-logo.png"
-              alt="js-logo"
-              width={100}
-            />
+            <img src="/languajes/js-logo.png" alt="js-logo" width={100} />
             <TypewriterLine text="JavaScript" />
           </span>
           <span className="text-center">
-            <img
-              src="/public/languajes/java-logo.png"
-              alt="java-logo"
-              width={100}
-            />
+            <img src="/languajes/java-logo.png" alt="java-logo" width={100} />
             <TypewriterLine text="Java" />
           </span>
           <span className="text-center">
-            <img
-              src="/public/languajes/py-logo.png"
-              alt="py-logo"
-              width={100}
-            />
+            <img src="/languajes/py-logo.png" alt="py-logo" width={100} />
             <TypewriterLine text="Python" />
           </span>
           <span className="text-center">
-            <img src="/public/languajes/c-logo.png" alt="c-logo" width={90} />
+            <img src="/languajes/c-logo.png" alt="c-logo" width={90} />
             <TypewriterLine text="C++" />
           </span>
           <span className="text-center">
-            <img src="/public/languajes/ts-logo.png" alt="c-logo" width={100} />
+            <img src="/languajes/ts-logo.png" alt="c-logo" width={100} />
             <TypewriterLine text="TypeScript+" />
           </span>
         </div>
@@ -47,7 +35,7 @@ export default function Abilities() {
       <div className="mt-3.5">
         <TypewriterLine text="FrameWorks" />
         <div>
-          <span>hola</span>
+          <span>Failed Data</span>
         </div>
       </div>
     </TerminalContainer>
