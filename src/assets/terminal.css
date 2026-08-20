@@ -1,0 +1,112 @@
+/* index.css */
+/* body, html {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+} */
+
+/* Base container representing the screen housing */
+.terminal-container {
+  position: relative;
+  width: 50vw;
+  height: 100vh;
+  background: #031103;
+  animation: textFlicker 0.15s infinite;
+  
+}
+
+/* 1. Horizontal CRT Scanline Pattern */
+.crt-scanlines {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(
+    rgba(3, 113, 67, 0) 50%, 
+    rgba(3, 90, 29, 0.3) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 4px, 6px 100%;
+  z-index: 10;
+  pointer-events: none; /* Allows interacting with 3D Canvas underneath */
+}
+
+/* 2. Vignette & Sphere curvature simulation */
+.crt-screen-curve {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: radial-gradient(
+    circle, 
+    transparent 60%, 
+    rgba(0, 0, 0, 0.85) 100%
+  );
+  z-index: 11;
+  pointer-events: none;
+}
+
+/* 3. Global Terminal Glow and Phosphor Bleed */
+canvas, pre {
+  filter: drop-shadow(0 0 4px rgba(0, 255, 0, 0.65)) contrast(1.2);
+}
+
+/* Animations for old hardware instability */
+@keyframes textFlicker {
+  0% { opacity: 0.99; }
+  50% { opacity: 1; }
+  100% { opacity: 0.98; }
+}
+
+
+.terminal-ui {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  z-index: 5; /* Por encima del canvas, por debajo de las scanlines */
+  color: #00ff00;
+  font-family: 'Courier New', Courier, monospace;
+  pointer-events: none; /* Permite clickear a través de la caja hacia el canvas si es necesario */
+}
+
+/* Permitir interacción solo con elementos interactivos */
+.terminal-ui input, .terminal-ui h1, .terminal-ui p {
+  pointer-events: auto;
+}
+
+.terminal-ui h1 {
+  font-size: 1.2rem;
+  margin: 0 0 10px 0;
+}
+
+.terminal-ui p {
+  font-size: 0.9rem;
+  margin: 5px 0;
+}
+
+.status-success {
+  color: #55ff55;
+}
+
+/* Estilos para el Input de comandos */
+.terminal-input-line {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.terminal-input-line input {
+  background: transparent;
+  border: none;
+  color: #00ff00;
+  font-family: inherit;
+  font-size: 0.9rem;
+  outline: none;
+  margin-left: 8px;
+  flex: 1;
+}
