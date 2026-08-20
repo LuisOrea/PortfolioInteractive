@@ -1,5 +1,5 @@
 import { Html } from "@react-three/drei";
-import UseAiVoice from "../voices/UseAiVoice";
+// import UseAiVoice from "../voices/UseAiVoice";
 import TerminalScene from "../Escenas3D/Terminal";
 import TerminalWindow from "../Escenas3D/TerminalWindow";
 import Spinning from "../Escenas3D/Spinning";

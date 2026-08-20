@@ -4,7 +4,7 @@ import { useFrame } from "@react-three/fiber";
 export default function Spinning() {
   const meshRef = useRef<any>(null);
 
-  useFrame((state, delta) => {
+  useFrame((_, delta) => {
     meshRef.current.rotation.x += delta * 0.5;
     meshRef.current.rotation.y += delta * 0.5;
   });
