@@ -4,11 +4,11 @@ import { Terminal, Minus, Square, X } from "lucide-react";
 import HackingLoader3D from "./HackingLoader";
 
 interface TerminalWindowProps {
-  id: string;
-  title?: string;
-  children: React.ReactNode;
-  onClose: (id: string) => void;
-  modales: Record<string, boolean>;
+  readonly id: string;
+  readonly title?: string;
+  readonly children: React.ReactNode;
+  readonly onClose: (id: string) => void;
+  readonly modales: Record<string, boolean>;
 }
 
 export default function TerminalWindow({
@@ -69,18 +69,21 @@ export default function TerminalWindow({
         {/* Botones estilo OS */}
         <div className="flex items-center gap-3">
           <button
+            type="button"
             onClick={() => setIsMinimized(true)}
             className="text-zinc-500 hover:text-emerald-400 transition-colors cursor-pointer"
           >
             <Minus size={14} />
           </button>
           <button
+            type="button"
             className="text-zinc-500 hover:text-emerald-400 transition-colors cursor-pointer"
             onClick={() => setIsMinimized(false)}
           >
             <Square size={12} />
           </button>
           <button
+            type="button"
             onClick={() => onClose(id)}
             className="text-zinc-500 hover:text-red-500 transition-colors cursor-pointer"
           >

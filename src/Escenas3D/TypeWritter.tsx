@@ -16,11 +16,11 @@ const containerVariants: Variants = {
   }),
 };
 
+// Se remueve display: "none" para evitar colapsos en el renderizado
 const letterVariants: Variants = {
-  hidden: { opacity: 0, display: "none" },
+  hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    display: "inline-block",
   },
 };
 
@@ -29,20 +29,38 @@ export function TypewriterLine({
   speed = 0.03,
   className = "",
 }: TypewriterLineProps) {
-  const letters = Array.from(text);
+  // Dividimos primero por palabras para mantener la integridad léxica
+  const words = text.split(" ");
 
   return (
     <motion.div
       variants={containerVariants}
       custom={speed}
-      // Aseguramos que el contenedor mantenga el flujo de texto continuo
+      initial="hidden"
+      animate="visible"
       className={`inline font-mono ${className}`}
     >
-      {letters.map((letter, index) => (
-        <motion.span key={index} variants={letterVariants}>
-          {/* 💡 Si es un espacio vacío, renderizamos un espacio duro (\u00A0) para que no se colapse */}
-          {letter === " " ? "\u00A0" : letter}
-        </motion.span>
+      {words.map((word, wordIndex) => (
+        <span
+          key={wordIndex}
+          className="inline-block whitespace-nowrap"
+        >
+          {Array.from(word).map((letter, letterIndex) => (
+            <motion.span
+              key={letterIndex}
+              variants={letterVariants}
+              className="inline-block"
+            >
+              {letter}
+            </motion.span>
+          ))}
+          {/* Agregamos el espacio entre palabras al final de cada bloque */}
+          {wordIndex < words.length - 1 && (
+            <motion.span variants={letterVariants} className="inline-block">
+              {"\u00A0"}
+            </motion.span>
+          )}
+        </span>
       ))}
     </motion.div>
   );
