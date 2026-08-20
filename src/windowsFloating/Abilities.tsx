@@ -4,9 +4,8 @@ import { TypewriterLine } from "../Escenas3D/TypeWritter";
 export default function Abilities() {
   return (
     <TerminalContainer>
-      <div>
-        <TypewriterLine text="Dentro de mis habilidades destacan las siguientes herramientas:" />
-      </div>
+      <TypewriterLine text="Dentro de mis habilidades destacan las siguientes herramientas:" />
+
       <div className="mt-2.5">
         <TypewriterLine text="Lenguajes" />
         <div className="flex justify-around mt-3.5">
@@ -47,6 +46,9 @@ export default function Abilities() {
 
       <div className="mt-3.5">
         <TypewriterLine text="FrameWorks" />
+        <div>
+          <span>hola</span>
+        </div>
       </div>
     </TerminalContainer>
   );
